@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Grid, Typography, TextField, Button, Select, MenuItem, InputLabel } from '@mui/material';
+import { Paper, Grid, Typography, TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import IMG from '../../src/srm_background.jpeg';
 
 const Register = () => {
@@ -17,8 +17,8 @@ const Register = () => {
     const pseudoElementStyle = {
         content: '""',
         backgroundImage: `url(${IMG})`,
-        filter: 'blur(4px)', 
-        backgroundSize: 'cover', 
+        filter: 'blur(4px)',
+        backgroundSize: 'cover',
         position: 'absolute',
         top: 0,
         left: 0,
@@ -34,7 +34,7 @@ const Register = () => {
     return (
         <div>
             <Paper elevation={10} style={paperStyle}>
-            <div style={pseudoElementStyle}></div> 
+                <div style={pseudoElementStyle}></div>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <Typography variant="h4" style={headingStyle}>
@@ -42,7 +42,7 @@ const Register = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={6} style={inputStyle}>
-                        <InputLabel>First Name</InputLabel>
+
                         <TextField
                             label="First Name"
                             fullWidth
@@ -50,7 +50,7 @@ const Register = () => {
                         />
                     </Grid>
                     <Grid item xs={6} style={inputStyle}>
-                        <InputLabel>Last Name</InputLabel>
+
                         <TextField
                             label="Last Name"
                             fullWidth
@@ -58,7 +58,7 @@ const Register = () => {
                         />
                     </Grid>
                     <Grid item xs={6} style={inputStyle}>
-                        <InputLabel>Email</InputLabel>
+
                         <TextField
                             label="Email"
                             fullWidth
@@ -66,20 +66,21 @@ const Register = () => {
                         />
                     </Grid>
                     <Grid item xs={6} style={inputStyle}>
-                        <InputLabel>Role</InputLabel>
-                        <Select
-                            label="Role"
-                            fullWidth
-                            variant="outlined"
-                        >
-                            <MenuItem value="student">Student</MenuItem>
-                            <MenuItem value="teacher">Teacher</MenuItem>
-                            <MenuItem value="parent">Parent</MenuItem>
-                        </Select>
+                        <FormControl fullWidth variant="outlined">
+                            <InputLabel htmlFor="role-select">Role</InputLabel>
+                            <Select
+                                labelId="role-select"
+                                label="Role"
+                            >
+                                <MenuItem value="student">Student</MenuItem>
+                                <MenuItem value="teacher">Teacher</MenuItem>
+                                <MenuItem value="parent">Parent</MenuItem>
+                            </Select>
+                        </FormControl>
                     </Grid>
-                    
+
                     <Grid item xs={12} style={inputStyle}>
-                        <InputLabel>Password</InputLabel>
+
                         <TextField
                             label="Password"
                             fullWidth
@@ -88,7 +89,7 @@ const Register = () => {
                         />
                     </Grid>
                     <Grid item xs={12} style={inputStyle}>
-                        <InputLabel>Retype Password</InputLabel>
+
                         <TextField
                             label="Retype Password"
                             fullWidth
@@ -101,7 +102,7 @@ const Register = () => {
                             variant="contained"
                             color="primary"
                             fullWidth
-                            style={{ backgroundColor: '#e4b316'}}
+                            style={{ backgroundColor: '#e4b316' }}
                         >
                             Register
                         </Button>

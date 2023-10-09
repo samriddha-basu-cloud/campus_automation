@@ -1,8 +1,9 @@
 import './App.css';
-  import HomePage from './components/HomePage';
+
   import { Login } from './components/Login';
   import { Routes, Route } from 'react-router-dom';
   import  Register  from './components/Register';
+import Dashboard from './components/Dashboard';
 
 
   function App() {
@@ -10,6 +11,7 @@ import './App.css';
     <Routes>
       <Route path="/" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
+      <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
     );
   }
